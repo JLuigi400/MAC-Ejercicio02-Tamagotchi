@@ -11,16 +11,18 @@ import Foundation
 class ControladorGeneral {
     var tamagotchi: Tamagotchi
     
+    var estado: EstadosTamagotchi = .Neutro
+    
     init(tamagotchi_cargar: Tamagotchi? = nil) {
         if let tamagotchi_cargar = tamagotchi_cargar {
             self.tamagotchi = tamagotchi_cargar
         }
         else {
             self.tamagotchi = Tamagotchi(
-                nombre: "Inicial", esta_vivo: false,
-                edad: 0, hambre: 100,
-                cansancio: 100, limpio: 0,
-                aburrido: 0)
+                nombre: "Jacinto", esta_vivo: true,
+                edad: 0, hambre: 50,
+                cansancio: 50, limpio: 50,
+                aburrido: 50)
         }
     }
     
@@ -46,5 +48,46 @@ class ControladorGeneral {
         return tamagotchi.esta_vivo
     }
     
+    func actualizar_medidores() -> Bool {
+        tamagotchi.hambre += 1
+        tamagotchi.aburrido += 1
+        tamagotchi.cansancio += 1
+        tamagotchi.limpio += 1
+        
+        actualizar_estado()
+        
+        return true
+    }
+    
+    private func actualizar_estado() {
+        switch(estado) {
+        case .Neutro: 
+            if(tamagotchi.hambre > 60) {
+                estado = .Hambriento
+            }
+            if(tamagotchi.cansancio > 80) {
+                estado = .Adormilado
+            }
+        case .Hambriento:
+            if(tamagotchi.hambre > 80) {
+                estado = .Inanicion
+            }
+        case .Inanicion:
+            if(tamagotchi.hambre > 100) {
+                estado = .Muerte
+            }
+        default:
+            return
+        }
+    }
+    
+    func Alimentar() -> Bool {
+        if tamagotchi.esta_vivo {
+            tamagotchi.hambre -= 20
+            return true
+        }
+        
+        return false
+    }
 }
 
