@@ -84,6 +84,9 @@ class ControladorGeneral {
     func Alimentar() -> Bool {
         if tamagotchi.esta_vivo {
             tamagotchi.hambre -= 20
+            if(tamagotchi.hambre <= 0) {
+                tamagotchi.hambre = 0
+            }
             return true
         }
         
