@@ -81,6 +81,22 @@ class ControladorGeneral {
         }
     }
     
+    func Adormilar() -> Bool {
+        if tamagotchi.esta_vivo {
+            tamagotchi.cansancio += 20
+            return true
+        }
+        return false
+    }
+    
+    func Enojar() -> Bool {
+        if tamagotchi.esta_vivo {
+            tamagotchi.cansancio += 20
+            return true
+        }
+        return false
+    }
+    
     func Alimentar() -> Bool {
         if tamagotchi.esta_vivo {
             tamagotchi.hambre -= 20
@@ -90,6 +106,14 @@ class ControladorGeneral {
             return true
         }
         
+        return false
+    }
+    
+    func Entretener() -> Bool {
+        if tamagotchi.esta_vivo {
+            tamagotchi.aburrido -= 20
+            return true
+        }
         return false
     }
 }

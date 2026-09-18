@@ -181,6 +181,12 @@ struct PantallaInicial: View {
                     Button("ACTUALIZAR") {
                         controlador_tamagotchi.actualizar_medidores()
                     }
+                    Spacer()
+                    Button("DARLE ZAPE") {
+                        let comando = ComandosTamagotchi.darle_zape
+                        
+                        controlador_tamagotchi.procesar_comando(comando)
+                    }
                 }
                 
                 TextField("Nombre del PET: ", text: $nombre_nuevo)
