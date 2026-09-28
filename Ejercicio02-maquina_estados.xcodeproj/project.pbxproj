@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		FB55C1D5306AA20F008337EC /* sniper_avatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sniper_avatar.jpg; sourceTree = "<group>"; };
 		FBE2B623304EF7B500C4A8E8 /* Ejercicio02-maquina_estados.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ejercicio02-maquina_estados.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -29,9 +30,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB55C1D4306AA1B3008337EC /* imagenes */ = {
+			isa = PBXGroup;
+			children = (
+				FB55C1D5306AA20F008337EC /* sniper_avatar.jpg */,
+			);
+			path = imagenes;
+			sourceTree = "<group>";
+		};
 		FBE2B61A304EF7B500C4A8E8 = {
 			isa = PBXGroup;
 			children = (
+				FB55C1D4306AA1B3008337EC /* imagenes */,
 				FBE2B625304EF7B500C4A8E8 /* Ejercicio02-maquina_estados */,
 				FBE2B624304EF7B500C4A8E8 /* Products */,
 			);
@@ -253,6 +263,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Aqui se requiere permisos para usar la camara en vista AR";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -284,6 +295,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Aqui se requiere permisos para usar la camara en vista AR";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
