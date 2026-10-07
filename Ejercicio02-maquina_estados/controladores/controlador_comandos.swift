@@ -9,6 +9,10 @@ enum ComandosTamagotchi: Comando {
     case darle_dulce
     case darle_zape
     case darle_brocoli
+    
+    case jugar
+    case dormir
+    case limpiar
 }
 
 extension ControladorGeneral: ProcesarComandos {
@@ -32,9 +36,21 @@ extension ControladorGeneral: ProcesarComandos {
             Alimentar()
             Enojar()
             break;
+            
+        case .jugar:
+            Entretener()
+            break;
+        case .dormir:
+            Descansar()
+            break;
+        case .limpiar:
+            Limpiar()
+            break;
         default:
             break;
         }
+        
+        actualizar_medidores()
         
         return true
     }

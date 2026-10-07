@@ -54,6 +54,22 @@ class ControladorGeneral {
         tamagotchi.cansancio += 1
         tamagotchi.limpio += 1
         
+        if tamagotchi.hambre >= 100 {
+            tamagotchi.hambre = 100
+        }
+        
+        if tamagotchi.aburrido >= 100 {
+            tamagotchi.aburrido = 100
+        }
+        
+        if tamagotchi.cansancio >= 100 {
+            tamagotchi.cansancio = 100
+        }
+        
+        if tamagotchi.limpio >= 100 {
+            tamagotchi.limpio = 100
+        }
+        
         actualizar_estado()
         
         return true
@@ -92,6 +108,17 @@ class ControladorGeneral {
         return false
     }
     
+    func Descansar() -> Bool {
+        if tamagotchi.esta_vivo {
+            tamagotchi.cansancio -= 20
+            if tamagotchi.cansancio <= 0{
+                tamagotchi.cansancio = 0
+            }
+            return true
+        }
+        return false
+    }
+    
     func Enojar() -> Bool {
         if tamagotchi.esta_vivo {
             tamagotchi.enojado += 20
@@ -120,6 +147,17 @@ class ControladorGeneral {
             tamagotchi.aburrido -= 20
             if tamagotchi.aburrido <= 0 {
                 tamagotchi.aburrido = 0
+            }
+            return true
+        }
+        return false
+    }
+    
+    func Limpiar() -> Bool {
+        if tamagotchi.esta_vivo {
+            tamagotchi.limpio -= 20
+            if tamagotchi.limpio <= 0 {
+                tamagotchi.limpio = 0
             }
             return true
         }
