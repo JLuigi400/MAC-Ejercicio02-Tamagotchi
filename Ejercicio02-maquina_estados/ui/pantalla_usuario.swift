@@ -52,30 +52,7 @@ struct PantallaInicial: View {
             
             Spacer()
             
-            HStack {
-                Rectangle()
-                    .frame(width: 30, height: 5)
-                Rectangle()
-                    .frame(width: 10, height: 5)
-                Rectangle()
-                    .frame(width: 50, height: 5)
-                Spacer()
-                Rectangle()
-                    .frame(width: 30, height: 5)
-                Rectangle()
-                    .frame(width: 10, height: 5)
-                Rectangle()
-                    .frame(width: 50, height: 5)
-                Spacer()
-                Rectangle()
-                    .frame(width: 30, height: 5)
-                Rectangle()
-                    .frame(width: 10, height: 5)
-                Rectangle()
-                    .frame(width: 50, height: 5)
-                Spacer()
-            }
-            .foregroundStyle(Color("PETAzul"))
+            SeparadorPET()
             
             // Información Principal
             HStack {
@@ -97,76 +74,41 @@ struct PantallaInicial: View {
                 }
             }
             
-            HStack {
-                Rectangle()
-                    .frame(width: 30, height: 5)
-                Rectangle()
-                    .frame(width: 10, height: 5)
-                Rectangle()
-                    .frame(width: 50, height: 5)
-                Spacer()
-                Rectangle()
-                    .frame(width: 30, height: 5)
-                Rectangle()
-                    .frame(width: 10, height: 5)
-                Rectangle()
-                    .frame(width: 50, height: 5)
-                Spacer()
-                Rectangle()
-                    .frame(width: 30, height: 5)
-                Rectangle()
-                    .frame(width: 10, height: 5)
-                Rectangle()
-                    .frame(width: 50, height: 5)
-                Spacer()
-            }
-            .foregroundStyle(Color("PETAzul"))
+            SeparadorPET()
             
             Spacer()
             
             // Estadísticas
             HStack {
-                VStack {
-                    Text("HAMBRE")
-                        .foregroundStyle(Color("PETAzul"))
-                    Text("\(controlador_tamagotchi.tamagotchi.hambre)")
-                        .foregroundStyle(Color("PETTexto"))
-                }
-                .frame(width: 130, height: 60)
-                .background(Color("PETPanelClaro"))
+                Spacer()
+                
+                TarjetaEstado(
+                    titulo: "HAMBRE", valor: controlador_tamagotchi.tamagotchi.hambre
+                )
                 
                 Spacer()
                 
-                VStack {
-                    Text("ENERGIA")
-                        .foregroundStyle(Color("PETAzul"))
-                    Text("\(controlador_tamagotchi.tamagotchi.cansancio)")
-                        .foregroundStyle(Color("PETTexto"))
-                }
-                .frame(width: 130, height: 60)
-                .background(Color("PETPanelClaro"))
+                TarjetaEstado(
+                    titulo: "ENERGIA", valor: controlador_tamagotchi.tamagotchi.cansancio
+                )
+                
+                Spacer()
             }
             
             HStack {
-                VStack {
-                    Text("LIMPIEZA")
-                        .foregroundStyle(Color("PETAzul"))
-                    Text("\(controlador_tamagotchi.tamagotchi.limpio)")
-                        .foregroundStyle(Color("PETTexto"))
-                }
-                .frame(width: 130, height: 60)
-                .background(Color("PETPanelClaro"))
+                Spacer()
+                
+                TarjetaEstado(
+                    titulo: "LIMPIEZA", valor: controlador_tamagotchi.tamagotchi.limpio
+                )
                 
                 Spacer()
                 
-                VStack {
-                    Text("ANIMO")
-                        .foregroundStyle(Color("PETAzul"))
-                    Text("\(controlador_tamagotchi.tamagotchi.aburrido)")
-                        .foregroundStyle(Color("PETTexto"))
-                }
-                .frame(width: 130, height: 60)
-                .background(Color("PETPanelClaro"))
+                TarjetaEstado(
+                    titulo: "ANIMO", valor: controlador_tamagotchi.tamagotchi.aburrido
+                )
+                
+                Spacer()
             }
             
             Spacer()
@@ -194,30 +136,7 @@ struct PantallaInicial: View {
                     }
                 }
                 
-                HStack {
-                    Rectangle()
-                        .frame(width: 30, height: 5)
-                    Rectangle()
-                        .frame(width: 10, height: 5)
-                    Rectangle()
-                        .frame(width: 50, height: 5)
-                    Spacer()
-                    Rectangle()
-                        .frame(width: 30, height: 5)
-                    Rectangle()
-                        .frame(width: 10, height: 5)
-                    Rectangle()
-                        .frame(width: 50, height: 5)
-                    Spacer()
-                    Rectangle()
-                        .frame(width: 30, height: 5)
-                    Rectangle()
-                        .frame(width: 10, height: 5)
-                    Rectangle()
-                        .frame(width: 50, height: 5)
-                    Spacer()
-                }
-                .foregroundStyle(Color("PETAzul"))
+                SeparadorPET()
                 
                 VStack {
                     Text ("IDENTIDAD")
@@ -234,30 +153,7 @@ struct PantallaInicial: View {
                     }
                 }
                 
-                HStack {
-                    Rectangle()
-                        .frame(width: 30, height: 5)
-                    Rectangle()
-                        .frame(width: 10, height: 5)
-                    Rectangle()
-                        .frame(width: 50, height: 5)
-                    Spacer()
-                    Rectangle()
-                        .frame(width: 30, height: 5)
-                    Rectangle()
-                        .frame(width: 10, height: 5)
-                    Rectangle()
-                        .frame(width: 50, height: 5)
-                    Spacer()
-                    Rectangle()
-                        .frame(width: 30, height: 5)
-                    Rectangle()
-                        .frame(width: 10, height: 5)
-                    Rectangle()
-                        .frame(width: 50, height: 5)
-                    Spacer()
-                }
-                .foregroundStyle(Color("PETAzul"))
+                SeparadorPET()
                 
                 Button("¿DARLE CON LA PALA?") {
                     controlador_tamagotchi.muerto()

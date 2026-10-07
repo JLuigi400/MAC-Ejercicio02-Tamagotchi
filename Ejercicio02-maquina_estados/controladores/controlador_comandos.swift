@@ -5,8 +5,6 @@
 //  Created by Iris Gabriela Perales Ortiz on 18/09/26.
 //
 
-///import ARKit
-
 enum ComandosTamagotchi: Comando {
     case darle_dulce
     case darle_zape

@@ -118,8 +118,8 @@ class ControladorGeneral {
     func Entretener() -> Bool {
         if tamagotchi.esta_vivo {
             tamagotchi.aburrido -= 20
-            if tamagotchi.aburrido >= 100 {
-                tamagotchi.aburrido = 100
+            if tamagotchi.aburrido <= 0 {
+                tamagotchi.aburrido = 0
             }
             return true
         }

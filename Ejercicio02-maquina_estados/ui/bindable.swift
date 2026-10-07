@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-///import RealityKit
 
 struct BotonAdvertencia: View {
     @Binding var boton_pulsado: Bool
