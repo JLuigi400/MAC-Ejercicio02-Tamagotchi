@@ -11,7 +11,7 @@ struct PantallaBasica3: View {
     @State var estado_boton: Bool = false
     
     var body: some View {
-        BotonesAdvertencia(boton_pulsado: $estado_boton)
+        BotonAdvertencia(boton_pulsado: $estado_boton)
     }
 }
 

@@ -173,30 +173,96 @@ struct PantallaInicial: View {
             
             // Controladores
             if controlador_tamagotchi.tamagotchi.esta_vivo {
-                HStack {
-                    Button("ALIMENTAR") {
-                        controlador_tamagotchi.Alimentar()
+                VStack {
+                    Text ("ACCIONES")
+                        .foregroundStyle(Color("PETAzul"))
+                    HStack {
+                        Spacer()
+                        Button("ALIMENTAR") {
+                            controlador_tamagotchi.Alimentar()
+                        }
+                        Spacer()
+                        Button("DARLE ZAPE") {
+                            let comando = ComandosTamagotchi.darle_zape
+                            
+                            controlador_tamagotchi.procesar_comando(comando)
+                        }
+                        Spacer()
                     }
-                    Spacer()
                     Button("ACTUALIZAR") {
                         controlador_tamagotchi.actualizar_medidores()
                     }
+                }
+                
+                HStack {
+                    Rectangle()
+                        .frame(width: 30, height: 5)
+                    Rectangle()
+                        .frame(width: 10, height: 5)
+                    Rectangle()
+                        .frame(width: 50, height: 5)
                     Spacer()
-                    Button("DARLE ZAPE") {
-                        let comando = ComandosTamagotchi.darle_zape
-                        
-                        controlador_tamagotchi.procesar_comando(comando)
+                    Rectangle()
+                        .frame(width: 30, height: 5)
+                    Rectangle()
+                        .frame(width: 10, height: 5)
+                    Rectangle()
+                        .frame(width: 50, height: 5)
+                    Spacer()
+                    Rectangle()
+                        .frame(width: 30, height: 5)
+                    Rectangle()
+                        .frame(width: 10, height: 5)
+                    Rectangle()
+                        .frame(width: 50, height: 5)
+                    Spacer()
+                }
+                .foregroundStyle(Color("PETAzul"))
+                
+                VStack {
+                    Text ("IDENTIDAD")
+                        .foregroundStyle(Color("PETAzul"))
+                    
+                    HStack {
+                        Text("Nombre del PET: ")
+                            .foregroundStyle(Color("PETAmarillo"))
+                        TextField("Nombre", text: $nombre_nuevo)
+                    }
+                    
+                    Button("CAMBIAR NOMBRE") {
+                        controlador_tamagotchi.cambiar_nombre(nombre_nuevo)
                     }
                 }
                 
-                TextField("Nombre del PET: ", text: $nombre_nuevo)
-                
-                Button("CAMBIAR NOMBRE") {
-                    controlador_tamagotchi.cambiar_nombre(nombre_nuevo)
+                HStack {
+                    Rectangle()
+                        .frame(width: 30, height: 5)
+                    Rectangle()
+                        .frame(width: 10, height: 5)
+                    Rectangle()
+                        .frame(width: 50, height: 5)
+                    Spacer()
+                    Rectangle()
+                        .frame(width: 30, height: 5)
+                    Rectangle()
+                        .frame(width: 10, height: 5)
+                    Rectangle()
+                        .frame(width: 50, height: 5)
+                    Spacer()
+                    Rectangle()
+                        .frame(width: 30, height: 5)
+                    Rectangle()
+                        .frame(width: 10, height: 5)
+                    Rectangle()
+                        .frame(width: 50, height: 5)
+                    Spacer()
                 }
+                .foregroundStyle(Color("PETAzul"))
+                
                 Button("¿DARLE CON LA PALA?") {
                     controlador_tamagotchi.muerto()
                 }
+                .foregroundStyle(Color("PETRojo"))
             }
             else {
                 Text("PET OFFLINE")
