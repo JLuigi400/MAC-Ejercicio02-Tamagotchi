@@ -131,9 +131,24 @@ struct PantallaInicial: View {
                         }
                         Spacer()
                     }
+                    HStack {
+                        Spacer()
+                        Button("LIMPIAR") {
+                            controlador_tamagotchi.Limpiar()
+                        }
+                        Spacer()
+                        Button("DESCANSAR") {
+                            let comando = ComandosTamagotchi.dormir
+                            
+                            controlador_tamagotchi.procesar_comando(comando)
+                        }
+                        Spacer()
+                    }
+                    /*
                     Button("ACTUALIZAR") {
                         controlador_tamagotchi.actualizar_medidores()
                     }
+                    */
                 }
                 
                 SeparadorPET()

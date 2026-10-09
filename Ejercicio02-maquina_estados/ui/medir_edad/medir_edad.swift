@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum EstadosErroresUI{
-    case Vacio(leyenda: String) // Es usado para idnicar que tenemos una istuacion de un campo vacio y que quermeos decir en ese momento
+    case Vacio(leyenda: String) // Es usado para idnicar que tenemos una situacion de un campo vacio y que quermeos decir en ese momento
     case Error(leyenda: String) // Es para idnicar una leyenda al comoteer un error
     
     case Aceptado // Todo bien
