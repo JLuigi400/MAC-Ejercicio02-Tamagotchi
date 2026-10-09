@@ -120,8 +120,11 @@ struct PantallaInicial: View {
                         .foregroundStyle(Color("PETAzul"))
                     HStack {
                         Spacer()
-                        Button("ALIMENTAR") {
-                            controlador_tamagotchi.Alimentar()
+                        Button("ALIMENTAR DULCE") {
+                            let comando =
+                            ComandosTamagotchi.darle_dulce
+                            
+                            controlador_tamagotchi.procesar_comando(comando)
                         }
                         Spacer()
                         Button("DARLE ZAPE") {
@@ -134,7 +137,9 @@ struct PantallaInicial: View {
                     HStack {
                         Spacer()
                         Button("LIMPIAR") {
-                            controlador_tamagotchi.Limpiar()
+                            let comando = ComandosTamagotchi.limpiar
+                            
+                            controlador_tamagotchi.procesar_comando(comando)
                         }
                         Spacer()
                         Button("DESCANSAR") {
